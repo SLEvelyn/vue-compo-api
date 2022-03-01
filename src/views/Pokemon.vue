@@ -17,7 +17,7 @@
 
 <script>
 import {watch} from 'vue'
-import {useRoute} from 'vue-router'
+import {useRoute, onBeforeRouteLeave} from 'vue-router'
 import usePokemon from  '@/composables/usePokemon'
 
 export default {
@@ -34,7 +34,14 @@ export default {
          
       )  
       
+      onBeforeRouteLeave(()=> {
+         
+         const answer = window.confirm('¿Está seguro que desea salir?')
 
+         if(!answer) return false // false, bloquea la salida
+
+
+      })
 
       return {
          errorMessage,
