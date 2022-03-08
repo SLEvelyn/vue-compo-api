@@ -3,8 +3,6 @@ import {ref} from 'vue'
 
 const usePokemon = (pokemonId = '1') => {
 
-
-
     const pokemon = ref(1)
     const isLoading = ref(false)
     const errorMessage = ref()
